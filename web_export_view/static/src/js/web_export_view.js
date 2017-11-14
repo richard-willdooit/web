@@ -46,7 +46,7 @@ odoo.define('web_export_view', function (require) {
                 if (this.tag == 'field' && (this.attrs.widget === undefined || this.attrs.widget != 'handle')) {
                     // non-fields like `_group` or buttons
                     export_columns_keys.push(column_index);
-                    export_columns_names.push(this.attrs.name);
+                    export_columns_names.push(view.$el.find('.o_list_view > thead > tr> th[title]:eq('+column_index+')')[0].textContent);
                 }
                 column_index ++;
             });
